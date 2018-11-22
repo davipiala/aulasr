@@ -66,3 +66,22 @@ print(matriz2)
 matriz3 <- matriz2 + c(1:19)
 print(matriz3)
 
+#Exercicios 4
+#Operações com matrizes
+
+
+m5 <- m1 * m3
+m6 <- m3 * m1
+m7 <- m1 %*% m4
+class(m7)
+m8 <- m4 %*% m1
+class(m7)
+print(m4)
+print(m5)
+
+print(m7)
+print(m8)
+m5 == m6
+m7 == m8
+
+
