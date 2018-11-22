@@ -1,3 +1,4 @@
+#Exercício 1
 #Criar 6 vetores
 
 a <- c(332723, 19830329, 936, 544385, 8612) 
@@ -25,6 +26,7 @@ print(e)
 print("Vetor ai")
 print(ai)
 
+#Exercicios 2
 #Matrizes
 
 l <- c(a,b,c,d,e,ai)
@@ -46,7 +48,8 @@ dim(attitude)
 m4 <- matrix(data = as.matrix(attitude),nrow = 5,  ncol = 6 )
 print(m4)
 
-#Exercicio 3 Matrizes
+#Exercicio 3
+#Matrizes
 
 vetor <- c(1,2)
 matriz <- matrix(data = vetor, nrow = 19, ncol = 19, byrow = TRUE,
