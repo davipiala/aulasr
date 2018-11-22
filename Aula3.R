@@ -85,3 +85,38 @@ m5 == m6
 m7 == m8
 
 
+
+m1t <- matrix(data = m1, ncol= nrow(m1), nrow = ncol(m1), byrow = TRUE, dimnames = NULL)
+m1
+m1t
+
+m2t <- matrix(data = m2, ncol= nrow(m2), nrow = ncol(m2), byrow = TRUE, dimnames = NULL)
+m2
+m2t
+
+m3t <- matrix(data = m3, ncol= nrow(m3), nrow = ncol(m3), byrow = TRUE, dimnames = NULL)
+m3
+m3t
+
+m4t <- matrix(data = m4, ncol= nrow(m4), nrow = ncol(m4), byrow = TRUE, dimnames = NULL)
+m4
+m4t
+
+m5t <- matrix(data = m5, ncol= nrow(m5), nrow = ncol(m5), byrow = TRUE, dimnames = NULL)
+m5
+m5t
+
+
+m6t <- matrix(data = m6, ncol= nrow(m6), nrow = ncol(m6), byrow = TRUE, dimnames = NULL)
+m6
+m6t
+
+m7t <- matrix(data = m7, ncol= nrow(m7), nrow = ncol(m7), byrow = TRUE, dimnames = NULL)
+m7
+m7t
+
+
+m8t <- matrix(data = m8, ncol= nrow(m8), nrow = ncol(m8), byrow = TRUE, dimnames = NULL)
+m8
+m8t
+
