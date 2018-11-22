@@ -1,0 +1,86 @@
+---
+title: "excercise02_matrix"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+a <- c(332353, 19841226, 06269625793, 642789, 1234)
+b <- a * 2
+c <- b / 3
+d <- c * a^2
+e <- sqrt(d)
+ai <- a[length(a):1]
+
+```
+
+## Criar matrizes matrix 6x5 atravez de um vetor
+
+```{r m2}
+m1 <- cbind(a, b, c, d, e , ai)
+m1
+```
+
+## Criar matrizes matrix 5x6 atravez de um vetor
+
+```{r matrix5x6, echo=FALSE}
+m2 <- t(m1) # Matrix Transpose (Matriz transposta)
+m2
+```
+
+## Criar matrizes matrix m1 * 0.1
+
+```{r matrix0.1, echo=FALSE}
+m3 <- m1 * 0.1
+m3
+```
+
+
+
+```{r matrix0.1, echo=FALSE}
+m4 <- as.matrix( attitude[1:6,1:5] )
+m4
+```
+
+
+
+### Excercise
+
+```{r matrix19x19, echo=FALSE}
+mDemo <- matrix(1:2, nrow = 19, ncol = 19) ## show warinig
+mDemo
+```
+
+```{r matrix19x19sub1, echo=FALSE}
+mDemo - 1
+```
+
+```{r matrix19x19add1, echo=FALSE}
+mDemo + 1
+```
+
+
+### excercise 03
+
+
+```{r matrix19x19test, echo=FALSE}
+m5 <- m1 * m3
+```
+
+```{r matrix19x19test, echo=FALSE}
+m6 <- m3 * m1
+```
+
+```{r matrix19x19test, echo=FALSE}
+m7 <- m1 %*% m4
+m8 <- m4 %*% m1
+```
+
+
+```{r matrix19x19test, echo=FALSE}
+m1 %*% m4
+m1 * t(m4)
+t(m1) * m4
+t(m4) * m1
+```
