@@ -1,0 +1,44 @@
+---
+title: "MarkDown-aula3"
+author: "Davi Piala"
+date: "22 de novembro de 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+codigos
+```{r calculo}
+a <- c(332723, 19830329, 936, 544385, 8612) 
+b <- c(332723, 19830329, 936, 544385, 8612) * 2
+c <- c(332723, 19830329, 936, 544385, 8612) / 3
+d <- c + a**2
+e <- sqrt(d)
+ai <- a[5:1]
+
+```
+
+```{r a}
+a
+```
+
+```{r b}
+b
+```
+
+```{r c}
+c
+```
+```{r d}
+d
+```
+```{r e}
+e
+```
+
+```{r ai}
+ai
+```
+
