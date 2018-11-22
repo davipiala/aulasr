@@ -53,7 +53,7 @@ print(m4)
 
 vetor <- c(1,2)
 matriz <- matrix(data = vetor, nrow = 19, ncol = 19, byrow = TRUE,
-             dimnames = NULL)
+                 dimnames = NULL)
 
 print(matriz)
 
@@ -86,37 +86,84 @@ m7 == m8
 
 
 
-m1t <- matrix(data = m1, ncol= nrow(m1), nrow = ncol(m1), byrow = TRUE, dimnames = NULL)
+m1t <- t(m1)
 m1
 m1t
 
-m2t <- matrix(data = m2, ncol= nrow(m2), nrow = ncol(m2), byrow = TRUE, dimnames = NULL)
+
+m2t <- t(m2)
 m2
 m2t
 
-m3t <- matrix(data = m3, ncol= nrow(m3), nrow = ncol(m3), byrow = TRUE, dimnames = NULL)
+m3t <- t(m3)
 m3
 m3t
 
-m4t <- matrix(data = m4, ncol= nrow(m4), nrow = ncol(m4), byrow = TRUE, dimnames = NULL)
+m4t <- t(m4)
 m4
 m4t
 
-m5t <- matrix(data = m5, ncol= nrow(m5), nrow = ncol(m5), byrow = TRUE, dimnames = NULL)
+m5t <- t(m5)
 m5
 m5t
 
 
-m6t <- matrix(data = m6, ncol= nrow(m6), nrow = ncol(m6), byrow = TRUE, dimnames = NULL)
+m6t <- t(m6)
 m6
 m6t
 
-m7t <- matrix(data = m7, ncol= nrow(m7), nrow = ncol(m7), byrow = TRUE, dimnames = NULL)
+m7t <- t(m7)
 m7
 m7t
 
 
-m8t <- matrix(data = m8, ncol= nrow(m8), nrow = ncol(m8), byrow = TRUE, dimnames = NULL)
+m8t <- t(m8)
 m8
 m8t
 
+v <- 1:10
+diag(1:10)
+
+#Matriz identidade é uma matriz de diagonal 1
+#Existem matrizes diagonais
+#para criar uma matriz identidade é só usar o diag
+#qq matriz multiplicada por uma identidade é igual a ela mesma
+#para calcular uma matriz inversa é só descobrir qual a matriz multiplicada
+#por a matriz inversa dá como resultado a matriz identidade
+#a função solve obtem a matriz inversa de uma matriz qq
+
+solve(m1)
+solve(m2)
+solve(m3)
+solve(m4)
+solve(m5)
+solve(m6)
+solve(m7)
+solve(m8)
+#somente matrizes quadradas tem matrizes inversas, há matrizes quadradas
+#que possuem mais de uma matriz inversa
+#
+
+#FATORES são dados categoricos, tipo codigos SOLTEIRO, CASADO
+
+head(BrFlights2,5)
+BrFlights2$Situacao.Voo <- as.factor(BrFlights2$Situacao.Voo)
+class(BrFlights2$Situacao.Voo)
+
+head(BrFlights2,5)
+
+
+#Calculo do atraso
+BrFlights2$atraso = BrFlights2$Chegada.Prevista - BrFlights2$Chegada.Real
+head(BrFlights2,5)
+
+#Calculo da distancia
+BrFlights2$distancia = sqrt(((BrFlights2$LatOrig - BrFlights2$LatDest)**2)  - ((BrFlights2$LongOrig - BrFlights2$LongDest)**2))
+
+
+#soma dos catetos é conhecido como distancia de manhattam
+#
+
+
+
+data(mtcars) 
