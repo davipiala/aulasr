@@ -1,8 +1,18 @@
+BrFlights2
 
+mini <- BrFlights2[sample(nrow(BrFlights2), 100), ]
+# factor
+mini$Codigo.Tipo.Linha <- factor( mini$Codigo.Tipo.Linha  )
+mini$Situacao.Voo <- factor( mini$Situacao.Voo  )
 
-a <- c(332353, 19841226, 06269625793, 642789, 1234)
-b <- a * 2
-c <- b / 3
-d <- c * a^2
-e <- sqrt(d)
-ai <- a[length(a):1]
+# diff
+mini$Atraso.Partida <- mini$Partida.Real - mini$Partida.Prevista
+mini$Atraso.Chegada <- mini$Chegada.Real - mini$Chegada.Prevista
+mini$Tempo.Viagem <- mini$Chegada.Real - mini$Partida.Real
+summary(mini$Atraso.Partida)
+summary(mini)
+
+# BrFlights2
+BrFlights2$Atraso.Partida <- BrFlights2$Partida.Real - BrFlights2$Partida.Prevista
+BrFlights2$Atraso.Chegada <- BrFlights2$Chegada.Real - BrFlights2$Chegada.Prevista
+
