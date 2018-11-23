@@ -180,7 +180,7 @@ summary(BrFlights2)
 Companhias <- BrFlights2 %>%
 select(atrasoPartida) %>%
   group_by(Companhia.Aerea) %>%
-  summarise(atrasoPartida = mean(atrasoPartida))
+  summarise(mpg = mean(atrasoPartida), hp = mean(hp), qsec = mean(qsec))
 
 
 data(mtcars) 

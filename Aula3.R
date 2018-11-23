@@ -187,4 +187,35 @@ Companhias
 
 #Simulação de dados do cliente
 
+#Familia normal, função da distribuição normal
+#Função Gaussiana
+#1 desvio padrao 66 por cento 
+#2 desvido padrão 90 por cento
+#3 desvio padrão 99 por cento
+
+#gera numero aleatorios, 
+rnorm(1)
+
+#Modelo linear perfeito
+#Pode ser traduzido em uma frase como
+#Na media meu produto é 10% mais caro que do meu concorrente
+#RUIDO dado real
+
+#OUTLIERS fora da tendencia
+
+#notação da função normal x~N(0;1²)
+#notação da função normal x~N(0;1²)
+#~ aproximadamente
+
+library(plotly)
+eixo_x <- rnorm(n=100, sd=1, mean=0 )
+e <- rnorm(n=100, sd=2, mean=0 )
+
+eixo_y <-  0.5 + 2 * eixo_x + e
+
+plot_ly( x = eixo_x, y = eixo_y, type = "scatter" )
+
+#Existe também a distribuição uniforme
+
+
 
