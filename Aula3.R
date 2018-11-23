@@ -154,16 +154,37 @@ head(BrFlights2,5)
 
 
 #Calculo do atraso
-BrFlights2$atraso = BrFlights2$Chegada.Prevista - BrFlights2$Chegada.Real
+BrFlights2$atraso <- BrFlights2$Chegada.Prevista - BrFlights2$Chegada.Real
+BrFlights2$atrasoPartida <- BrFlights2$Partida.Prevista - BrFlights2$Partida.Real
+
 head(BrFlights2,5)
 
 #Calculo da distancia
-BrFlights2$distancia = sqrt(((BrFlights2$LatOrig - BrFlights2$LatDest)**2)  - ((BrFlights2$LongOrig - BrFlights2$LongDest)**2))
+BrFlights2$distancia <- sqrt(((BrFlights2$LatOrig - BrFlights2$LatDest)**2)  + ((BrFlights2$LongOrig - BrFlights2$LongDest)**2))
+
+#Media Atraso Partida
+mean(BrFlights2$atrasoPartida)
+quarters(BrFlights2$atrasoPartida,1)
+
+#Tempo real de viagem
+BrFlights2$tempoViagemReal <- BrFlights2$Chegada.Real - BrFlights2$Partida.Real
+
+#Resumo da tabela
+summary(BrFlights2$atraso)
+#Maior Atraso Medio - Companhia
 
 
 #soma dos catetos é conhecido como distancia de manhattam
-#
+#Media de atraso de partida
+library(dplyr)
+
+Companhias <- BrFlights2 %>%
+select(Companhia.Aerea, atrasoPartida) %>%
+group_by(Companhia.Aerea) %>%
+summarise(atrasoPartida = mean(atrasoPartida))
+
+Companhias
+
+#Simulação de dados do cliente
 
 
-
-data(mtcars) 
