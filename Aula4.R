@@ -57,9 +57,13 @@ head(airquality,10)
 
 #exibir uma com 10 linhas aleatórias
 
-linhasFiltro <- sample(x = nrow(airquality),size =10, replace = TRUE)
+linhasFiltro <- sample(x = nrow(airquality),size =10, replace = FALSE)
 
 
 airquality[linhasFiltro,]
+
+##Outras resoluções podem ir com dim(airqualit)[1], seql_along(airquality$wind)
+
+
 
 
