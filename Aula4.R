@@ -29,4 +29,37 @@ sample(x = amostra, replace = FALSE)
 sample(x = amostra, replace = TRUE)
 
 sample(x = amostra, size =5)
+#PROBABILIDADE 
 sample(x = amostra, size =10, replace = TRUE, prob = c(1,1,5,1,1,1,1,1,1,5))
+
+
+#Desvio padrão default para distribuição normal é 1, a média padrão é 0
+
+
+#HISTOGRAMA 
+#Um histograma dita a ocorrência de um determinado número em seu gráfico
+
+#summary funciona em tabelas e vetores
+
+#Gerar numeros dentro da sequencia dentro de um certa quantidade.
+seq(from=-5, to=5, length.out=1000)
+
+#Distruição exata
+#Distribuição acumulada
+#Dimensões
+dim(airquality)
+
+#RESUMO
+summary(airquality)
+
+#10 primeiras linhas
+head(airquality,10)
+
+#exibir uma com 10 linhas aleatórias
+
+linhasFiltro <- sample(x = nrow(airquality),size =10, replace = TRUE)
+
+
+airquality[linhasFiltro,]
+
+
