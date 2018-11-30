@@ -1,4 +1,4 @@
-analize exploratório
+analize exploratório ( entrega 7a aula )
 
 - Avalidar anãlise de dados 
 - Novos comandso em R interesante
