@@ -104,7 +104,7 @@ df
 
 
 
-
+#FUNCAO DE FATORIAL
 fatorial <- function(n){
   indice = 1
   valor = 1
@@ -116,6 +116,7 @@ fatorial <- function(n){
   return(valor)
 }
 
+#FUNCAO DE INVERTER VALORES
 inverte <- function(vetor){
   vetor_invertido <- NULL
   indice_invertido = length(vetor)
@@ -133,7 +134,25 @@ inv2 <- function(vet){
   vet[length(vet):1]
 }
 
+
+acumular <- function(vet){
+  vetor_acumulado <- NULL
+  acumulado <- 0 
+  i <- 1
+  while(i <= length(vet) ){
+    acumulado <- vet[i]  + acumulado
+    vetor_acumulado[i] <- acumulado
+    i <- i + 1
+  }
+  return(vetor_acumulado)
+    
+}
+
+
 inverte(c(1,2,3,4,5,6,7,8,9))
 inv2(c(1,2,3,4,5,6,7,8,9))
-
-
+vet <- c(1,2,3,4,5,6,7,8,9)
+vet[length(vet):1]
+AirPassengers
+acumular(AirPassengers)
+acumular(mtcars$mpg)
