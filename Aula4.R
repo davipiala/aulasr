@@ -116,19 +116,18 @@ fatorial <- function(n){
   return(valor)
 }
 
-numeroInvertido <- function(vetor){
+inverte <- function(vetor){
   vetor_invertido <- vetor
   indice_invertido = length(vetor)
   i = 1
   while(i <= length(vetor) ){
     
     vetor_invertido[indice_invertido] = vetor[i]
-    i <- i + 1
     indice_invertido <- indice_invertido - 1
   }
   return(vetor_invertido)
 }
 
-numeroInvertido(c(1,2,3,4,5,6,7,8,9))
+inverte(c(1,2,3,4,5,6,7,8,9))
 
 
