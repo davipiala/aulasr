@@ -105,10 +105,10 @@ df
 
 
 
-fatorial <- function(n, valor){
+fatorial <- function(n){
   indice = 1
   valor = 1
-  while(indice < n ){
+  while(indice <= n ){
     
     valor = indice * valor
     indice <- indice + 1
@@ -116,9 +116,19 @@ fatorial <- function(n, valor){
   return(valor)
 }
 
+numeroInvertido <- function(vetor){
+  vetor_invertido <- vetor
+  indice_invertido = length(vetor)
+  i = 1
+  while(i <= length(vetor) ){
+    
+    vetor_invertido[indice_invertido] = vetor[i]
+    i <- i + 1
+    indice_invertido <- indice_invertido - 1
+  }
+  return(vetor_invertido)
+}
 
- fatorial(n = 5, valor)
-valor
-
+numeroInvertido(c(1,2,3,4,5,6,7,8,9))
 
 
