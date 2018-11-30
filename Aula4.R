@@ -65,5 +65,60 @@ airquality[linhasFiltro,]
 ##Outras resoluções podem ir com dim(airqualit)[1], seql_along(airquality$wind)
 
 
+#Loop acumulado
+
+class(AirPassengers)
+summary(AirPassengers)
+dim(AirPassengers)
+
+AirPassengers
+df <- data.frame(AirPassengers, year = trunc(time(AirPassengers)), month = month.abb[cycle(AirPassengers)])
+df
+
+df <- data.frame(date=as.Date(index(dat)), Y = melt(dat)$value)
+
+
+vetor <- c(head(AirPassengers,500))
+
+3 
+tamanho = length(vetor)
+aux = 1
+vetor_mes <- c(1,2,3,4,5,6,7,8,9,10,11,12)
+vetor_passageiros <- c(0,0,0,0,0,0,0,0,0,0,0,0)
+length(vetor_passageiros)
+for (i in AirPassengers){
+  if(i %% 12 == 0){
+    aux <- 1
+  }
+  vetor_passageiros[aux] <-  AirPassengers[aux] +   vetor_passageiros[aux]
+
+  aux <- aux + 1
+    
+}
+length(vetor_passageiros)
+length(vetor_mes)
+df = cbind(vetor_mes, vetor_passageiros)
+
+df
+
+
+
+
+
+fatorial <- function(n, valor){
+  indice = 1
+  valor = 1
+  while(indice < n ){
+    
+    valor = indice * valor
+    indice <- indice + 1
+  }
+  return(valor)
+}
+
+
+ fatorial(n = 5, valor)
+valor
+
 
 
