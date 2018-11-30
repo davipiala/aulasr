@@ -134,6 +134,7 @@ inv2 <- function(vet){
   vet[length(vet):1]
 }
 
+##Minha solucao
 
 acumular <- function(vet){
   vetor_acumulado <- NULL
@@ -148,6 +149,18 @@ acumular <- function(vet){
     
 }
 
+#Solucao do professor
+
+acumularProfessor <- function(entrada){
+  valorAc <-0
+  saida <- NULL
+  for(j in entrada){
+    valorAc <- valorAc + j
+    saida <- c(saida, valorAc)
+  }
+  return(saida)
+}
+
 
 inverte(c(1,2,3,4,5,6,7,8,9))
 inv2(c(1,2,3,4,5,6,7,8,9))
@@ -156,3 +169,5 @@ vet[length(vet):1]
 AirPassengers
 acumular(AirPassengers)
 acumular(mtcars$mpg)
+acumularProfessor(mtcars$mpg)
+
