@@ -62,11 +62,14 @@ hist(-10:10)
 
 summary(airquality)
 boxplot(airquality)
+library("dplyr")
+
+ds1 <- airquality %>% filter(month==5) %>% select(Ozone) %>% arrange(Ozone) 
 
 
 ds <- sort(subset(airquality, airquality$Month == 5)$Ozone)
 
-ds
+class(ds)
 
 plot(ds)
 menor_valor <- min(ds)
@@ -74,12 +77,14 @@ maior_valor <- max(ds)
 media_valor <- mean (ds)
 quartis <- quantile(ds, c(0.25, 0.5, 0.75), type = 1)
 quartis
-lines(c(0,100), c(menor_valor,menor_valor),col="blue")
-lines(c(0,100), c(maior_valor,maior_valor),col="blue")
-lines(c(0,100), c(media_valor,media_valor),col="red")
-lines(c(0,100), c(quartis[1],quartis[1]),col="blue")
-lines(c(0,100), c(quartis[3],quartis[3]),col="blue")
+lines(c(0,30), c(menor_valor,menor_valor),col="blue")
+lines(c(0,30), c(maior_valor,maior_valor),col="blue")
+lines(c(0,30), c(media_valor,media_valor),col="red")
+lines(c(0,30), c(quartis[1],quartis[1]),col="blue")
+lines(c(0,30), c(quartis[3],quartis[3]),col="blue")
 
+summary(ds)
+median(ds)
 
 
 
