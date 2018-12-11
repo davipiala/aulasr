@@ -54,3 +54,34 @@ points(1:100, 1:100, col="red")
 
 plot(mtcars[,c(1,3)])
 abline(lm(mtcars[,c(3)] ~mtcars[,c(1)]))
+
+## HISTOGRAMA -> frequencia a partir de uma unica variavel
+
+hist(-10:10)
+## BOXPLOT, ajuda a avaliar várias séries de dimensões diferentes
+
+summary(airquality)
+boxplot(airquality)
+
+
+ds <- sort(subset(airquality, airquality$Month == 5)$Ozone)
+
+ds
+
+plot(ds)
+menor_valor <- min(ds)
+maior_valor <- max(ds)
+media_valor <- mean (ds)
+quartis <- quantile(ds, c(0.25, 0.5, 0.75), type = 1)
+quartis
+lines(c(0,100), c(menor_valor,menor_valor),col="blue")
+lines(c(0,100), c(maior_valor,maior_valor),col="blue")
+lines(c(0,100), c(media_valor,media_valor),col="red")
+lines(c(0,100), c(quartis[1],quartis[1]),col="blue")
+lines(c(0,100), c(quartis[3],quartis[3]),col="blue")
+
+
+
+
+
+##(x0,x1) (y0,y1)
