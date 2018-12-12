@@ -90,3 +90,46 @@ median(ds)
 
 
 ##(x0,x1) (y0,y1)
+
+
+
+
+mes5 <- c(subset(airquality, airquality$Month == 5)$Ozone,  rep(NA, 31- length(mes5) ))
+mes6 <- c(subset(airquality, airquality$Month == 6)$Ozone,  rep(NA, 31- length(mes6) ))
+mes7 <- c(subset(airquality, airquality$Month == 7)$Ozone,  rep(NA, 31- length(mes7)))
+mes8 <- c(subset(airquality, airquality$Month == 8)$Ozone,  rep(NA, 31- length(mes8)))
+mes9 <- c(subset(airquality, airquality$Month == 9)$Ozone,  rep(NA, 31- length(mes9)))
+length(mes5)
+length(mes6)
+length(mes7)
+length(mes8)
+length(mes9)
+
+
+df <- data.frame("5" <- mes5, "6" <- mes6, "7" <- mes7, "8" <- mes8, "9" <- mes9)
+
+
+boxplot(df)
+
+##METODO INTELIGENTE
+library("dplyr")
+airquality %>%
+select(Month, Ozone) -> meuplot 
+boxplot(meuplot$Ozone ~ meuplot$Month)
+
+
+
+
+
+
+boxplot(airquality$Ozone ~ airquality$Month, data <- airquality)
+boxplot(airquality$Wind ~ airquality$Month, data <- airquality)
+boxplot(airquality$Temp ~ airquality$Month, data <- airquality)
+boxplot(airquality$Solar.R ~ airquality$Month, data <- airquality)
+
+##COLOCAR VARIOS GRAFICOS NA MESMA DASHBOARD
+## LINHAS, COLUNAS
+par(mfrow=c(1,3))
+hist(trees$Girth)
+hist(trees$Height)
+hist(trees$Volume)
