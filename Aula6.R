@@ -133,3 +133,19 @@ par(mfrow=c(1,3))
 hist(trees$Girth)
 hist(trees$Height)
 hist(trees$Volume)
+
+par(mfrow=c(1,1))
+
+airquality %>%
+  select(Ozone, Wind) -> relacao 
+plot(relacao)
+
+abline(lm(airquality$Wind ~ airquality$Ozone), col="red")
+
+
+airquality %>%
+  select(Wind, Ozone ) -> relacao 
+plot(relacao)
+
+abline(lm(airquality$Ozone ~ airquality$Wind), col="red")
+
