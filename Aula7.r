@@ -105,7 +105,7 @@ plot(spain.3d[,-1])
 ##MODELO
 set.seed(2)
 modelo.fifa <- kmeans(x= spain.3d[,-1], centers <- 4)
-plot(spain.2d[,-1], col = modelo.fifa$cluster, pch =  21, cex= 1)
+plot(spain.3d[,-1], col = modelo.fifa$cluster, pch =  21, cex= 1)
 points(modelo.fifa$centers, col=4:1 , bg=1:4, pch=24, cex=1, lwd=1)
 
 
@@ -113,3 +113,59 @@ points(modelo.fifa$centers, col=4:1 , bg=1:4, pch=24, cex=1, lwd=1)
 fifa$league
 liga_espanha_ <- fifa %>% filter(league=="Spanish Primera División") %>% 
   select ( acceleration, dribbling, long_passing)
+##MEDIDA TOTSS
+##TOTSS -> SOMA QUADRATICA TOTAL
+##DE UM PONTO PARA O OUTRO VAI EXISTIR UMA DISTANCIA, COMO ESTA DEFAULT SERA EUCLIDIANA
+##CADA PONTO EH MEDIDO A DISTANCIA PARA CADA UM DOS OUTROS PONTOS
+##O TOTSS NAO MUDA NUNCA PARA CADA CLUSTERIZACAO
+##MOSTRA CONCENTRACAO E DISPERSAO
+
+##MEDIDA WITHINISS
+
+##DISTANCIA DE TODOS OS PONTOS PARA TODOS OS PONTOS DE DENTRO DE UM CLUSTER
+#
+##BETWEENSS 
+
+##DISTANCIA QUADRATICA DE TODOS OS PONTOS PARA OS DEMAIS CENTROIDES DOS OUTROS CLUSTER
+##O KMEANS PARA EM CIMA DE UMA RAZAO, UM CRITERIO DE PARADA
+
+##BETWEENS DIVIDIDO POR TOTSS
+##UMA RAZAO PARA INDICAR A PARADA DO KMEANS
+
+##EXISTEM TECNICAS MATEMATICAS PARA DETERMINAR O NUMERO DE CLUSTER
+##QUANDO VC TEM UM CLUSTER SO 1,  BETWEENESS EH IGUAL A 0
+##QUANDO VC TEM O NUMERO DE CLUSTER IGUAL AO NUMERO DE ELEMENTOS ELE EH 1
+##SE VC PLOTAR EM UM GRAFICO VC IRA PERCEBER UMA CURVA
+##O VALOR A SER USADO EH AQUELE PROXIMO DA CURVATURA, ESSA CURVATURA OCORRE SE VC PLOTAR EM UM GRAFICO
+
+
+#ALTERNATIVA AO KMEANS
+#KMEDOIDES
+#KMEANS NAO EH DETERMINISTICO
+#KMEDOIDES EH DETERMINISTICO
+
+#MINIMIZA A SOMA DAS DISTANCIAS, 
+#A CHAMADA DO KAMEDOIDE 
+##EH pam(PARAMETRO)
+plot_ly(data = spain.2d,
+        x = ~dribbling, y = ~acceleration,
+        text = ~name,
+        type = 'scatter', mode ='markers')
+
+
+plot(spain.2d[,-1], col = modelo.fifa$cluster, pch =  21, cex= 1)
+
+spain.2d %>% mutate(cluster = modelo.fifa$cluster) %>%
+plot_ly(data = .,
+        x = ~dribbling, y = ~acceleration,
+        text = ~name, color = ~cluster,
+        type = 'scatter', mode ='markers')
+
+
+
+spain.3d %>% mutate(cluster = modelo.fifa$cluster) %>%
+  plot_ly(data = .,
+          x = ~dribbling, y = ~acceleration, z = ~long_passing,
+          text = ~name, color = ~cluster,
+          type = 'scatter3d', mode ='markers')
+
