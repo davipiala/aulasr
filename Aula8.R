@@ -88,4 +88,27 @@ Tecnicas SVM, Naive Bayes, Regressao, Redes Neurais, Arvoes de Regressao,
 Random Forest
 
 
+Pacote caret
+
+Classificacao e Regressao
+
+237 modelos
+
+Um conjunto de modelos muito util, tem uma fachada para usar varios modelos
+
+
+Arvores e Floresta
+##DATASET FAMOSO CHAMADO IRIS
+##ARVORES DE DECISAO - ID3, C4.5, Cart
+##EH POSSIVEL DEFINIR O NIVEL MAXIMO DA PROFUNDIDADE DA ARVORE
+##PASSOS DO ID3
+##CRESCIMENTO, ANALISE e PODA
+
+##E POSSIVEL ATEH PLOTAR O MODELO 
+
+
+##RANDOM FOREST
+##GERA UM MONTE DE ARVORES E POE ELAS PRA CONCORRER.
+
+
 
