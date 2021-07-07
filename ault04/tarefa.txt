@@ -1,0 +1,16 @@
+analize exploratório ( entrega 7a aula )
+
+- Avalidar anãlise de dados 
+- Novos comandso em R interesante
+- Identificar problemas reais
+- Compartilhar com a turma
+
+## Entrega( Slide de 5min)
+- Explicação do problema
+- Quais os principaos "insights" que o autor da EDA encontrou e expõs? como ele expôs.
+- Instruções interessantes em R
+- O que o grupo acha que faltou nesta EDA
+
+
+O que é grafico aluvial
+grafico violino
